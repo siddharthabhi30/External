@@ -6,11 +6,9 @@ The Mapping Particle Filter (MPF) belongs to the family of particle flow filters
 
 The movement takes place through an artificial pseudo-time $\lambda$. A velocity field moves the particles according to the ordinary differential equation:
 
-$$
-\frac{dx_\lambda}{d\lambda}
-=
-v_\lambda(x_\lambda).
-$$
+```math
+\frac{dx_\lambda}{d\lambda} = v_\lambda(x_\lambda)
+```
 
 Here, $v_\lambda(x_\lambda)$ determines the direction and speed with which a particle moves at the current pseudo-time.
 
@@ -19,11 +17,11 @@ The movement happens iteratively. At every pseudo-time step, the method:
 1. calculates the velocity field using the current particles;
 2. moves each particle by a small step:
 
-$$
-x_{\lambda+\epsilon}
-=
-x_\lambda+\epsilon v_\lambda(x_\lambda);
-$$
+   ```math
+   x_{\lambda+\epsilon}
+   =
+   x_\lambda+\epsilon v_\lambda(x_\lambda);
+   ```
 
 3. recalculates the velocity field using the moved particles;
 4. repeats the process.
@@ -34,23 +32,23 @@ The difference in the MPF is how it chooses the velocity field. It chooses the d
 
 The negative KL gradient is used as the velocity field:
 
-$$
+```math
 v_\lambda(x_\lambda)
 =
 -\nabla KL(x_\lambda).
-$$
+```
 
 Therefore, the MPF particle update is:
 
-$$
+```math
 x_{\lambda+\epsilon}
 =
 x_\lambda-\epsilon\nabla KL(x_\lambda).
-$$
+```
 
 The final velocity field used by the MPF is the negative KL gradient:
 
-$$
+```math
 v(x)
 =
 -\nabla KL(x)
@@ -62,7 +60,7 @@ K(x^{(l)},x)\nabla_{x^{(l)}}\log p(x^{(l)})
 +
 \nabla_{x^{(l)}}K(x^{(l)},x)
 \right].
-$$
+```
 
 The kernel-gradient term provides the repelling force intended to prevent particle collapse. Hu and van Leeuwen (2021) show that, with the scalar kernel in a high-dimensional system, this repelling force can become too weak.
 
@@ -76,14 +74,14 @@ They connect this weak repulsion with particles collapsing toward the posterior 
 
 The original MPF experiments use the Gaussian scalar kernel:
 
-$$
+```math
 K(x,x')
 =
 \exp\left[
 -\frac{1}{2}
 (x-x')^T A^{-1}(x-x')
 \right].
-$$
+```
 
 ## Scalar-Kernel Limitation
 
