@@ -4,7 +4,7 @@
 
 ## 0. Background
 
-- **Software engineer, 6 years.** SDE-2 at AWS since 2022, on Athena and Lex. Designed distributed systems serving over 250 million queries a day.
+- **Software engineer, 6 years.** SDE at AWS since 2022, on Athena and Lex. Designed distributed systems serving over 250 million queries a day.
 - **Independent coursework, no teaching support.** MIT 6.824 Distributed Systems — full Raft implementation in Go. MIT 6.S081 Operating Systems.
 - **Topcoder — Competitive programming** — Achieved global rank 11 in a competition.
 - **Physics-inspired DNN modification for radar** (personal project). Picks out targets too faint to see in a single frame by accumulating them across many frames. On synthetic radar data, detection rose from 83% to 92%. [Write-up](https://medium.com/@siddharthabhi30/when-physics-met-neural-network-67a35670c0c7).
