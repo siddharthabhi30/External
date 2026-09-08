@@ -1,60 +1,50 @@
-# Career-map
+# Where does physics-based inference get hired?
 
-**Siddharth** · [siddharthabhi30@gmail.com](mailto:siddharthabhi30@gmail.com) · [full background](https://sweltering-clematis-24f.notion.site/2ff1e8d5adfd80699d01d220f8d1f8e1?v=3bc1e8d5adfd8057950a000ca8e833b8)
-
-**1 September 2026.** A survey of computational fields, compiled while choosing one to commit to. Sources in §7.
+**Siddharth Abhi** · [siddharthabhi30@gmail.com](mailto:siddharthabhi30@gmail.com) · [resume](https://drive.google.com/file/d/1CxLFIKJ7P4eBhqNGCeyWnYVStYtQ3BY6/view?usp=sharing) · [full background](https://sweltering-clematis-24f.notion.site/2ff1e8d5adfd80699d01d220f8d1f8e1?v=3bc1e8d5adfd8057950a000ca8e833b8)
 
 ## 0. Background
 
-- **Software engineer, 6 years.** SDE-2 at AWS since 2022 — Athena (distributed SQL query engine) and Lex. Distributed systems: admission control at 3,000+ TPS, resource vending at 2,000+ TPS, consistent hashing, zero-downtime migration of a live counting pathway.
-- **Independent coursework.** MIT 6.824 Distributed Systems — full Raft implementation in Go. MIT 6.S081 Operating Systems.
+- **Software engineer, 6 years.** SDE-2 at AWS since 2022, on Athena and Lex. Designed distributed systems serving over 250 million queries a day.
+- **Independent coursework, no teaching support.** MIT 6.824 Distributed Systems — full Raft implementation in Go. MIT 6.S081 Operating Systems.
 - **Topcoder competitive programming** — global rank 11.
-- **Physics-gated ConvLSTM for track-before-detect.** Added a learned bypass gate to prevent saturation when integrating sub-noise targets across frames. On synthetic radar data, detection improved from 83% to 92%. [Write-up](https://medium.com/@siddharthabhi30/when-physics-met-neural-network-67a35670c0c7).
+- **Physics-inspired DNN modification for radar** (personal project). Picks out targets too faint to see in a single frame by accumulating them across many frames. On synthetic radar data, detection rose from 83% to 92%. [Write-up](https://medium.com/@siddharthabhi30/when-physics-met-neural-network-67a35670c0c7).
 - **Research: high-dimensional particle flow filters, DNN-aided.** Submission planned for ICASSP 2027.
 
-## 1. Purpose of this document
-
-**The decision.** Which technical field to commit to for the next decade.
-
-**What I want from the field.** A place where building the system and doing
-research run in parallel, in one job rather than two, and where inventing
-something new is a normal part of the work.
-
-**How this survey was built.** Fields are grouped by **how industry hires** — job
-title and the requirements text of live postings — not by shared mathematics or
-academic subject. Two fields sharing an equation are treated as one only if the
-same postings accept both backgrounds. The evidence and source inventory are in
-§7; job links may expire after this document's date.
+## 1. What this document is for
 
 **What I am asking for.** A potential project, a networking lead, or general
 career guidance. I am an Indian citizen, so US programmes gated on citizenship
 or security clearance are out of scope. Civil, European, Indian and commercial
 routes are open.
 
+**How this survey was built.** Fields are grouped by **how industry hires** — job
+title and the requirements of live postings — rather than by shared mathematics
+or academic subject. Two fields count as one only when the same postings accept
+both backgrounds. The evidence and source inventory are in §7.
+
 ## 2. Selection criteria
 
-- **Momentum** — the work should build up over ten years, not stay at the level of operating tools.
+- **Momentum** — skill and judgment should compound over ten years, with room to invent new methods along the way.
 - **Algorithmic centre** — modelling, inference, optimization or signal processing as the primary activity.
-- **An existing application.**
-- **Research that advances the work itself** — new methods arising from the engineering problem, not side projects run alongside it.
 
-Not weighted: salary, job volume, prestige, proximity to current skills.
-Algorithms and software, not circuit or hardware design. MSc or PhD acceptable.
+Salary, job volume, prestige and closeness to current skills are not weighed.
+The work should be software and algorithms, not circuit or hardware design.
+MSc or PhD both fine.
 
 ## 3. Main wave-based lanes: hiring and applications
 
-Shared mathematics does not make these one career. Hiring separates them by
-modality and application. Each can support both scientific work and products.
+Hiring separates these by modality and application. Each can support both
+scientific work and products.
 
 | Measurement and application | Hires as | Requirements and evidence |
 |---|---|---|
-| Conventional radar; counter-UAS under interference | Radar Signal Processing Engineer | *Detection/estimation, waveforms, phenomenology.* [Measured interference](https://doi.org/10.21227/E47T-P857) · [synchronized drone data](https://www.nature.com/articles/s41597-026-06802-6) · [review](https://doi.org/10.1016/j.cja.2026.104203) |
-| Moving-platform SAR; Earth deformation, flood and ice | [SAR Engineer](https://www.iceye.com/careers/positions) · [sarmap](https://www.sarmap.ch/index.php/sar-remote-sensing-specialist/) | *Image formation, radar physics, phenomenology.* [NISAR](https://science.nasa.gov/mission/nisar/) · [Sentinel-1](https://dataspace.copernicus.eu/) · [MintPy](https://github.com/insarlab/MintPy) |
-| SAR-GMTI / DMTI; wide-area moving targets | Radar/SAR Moving-Target Engineer | *Moving-target indication and tracking.* [Sandia](https://www.sandia.gov/radar/modes-frequency-bands-of-operation/) · [Gotcha challenge](https://www.sdms.afrl.af.mil/content/challenge_areas/documents/A_challenge_problem_for_SAR-based_GMTI_in_urban_environments.pdf) |
-| Underwater acoustics; marine-mammal and offshore monitoring | Sonar / Marine Acoustics Engineer | *Hydrography, geophysics and marine geospatial methods.* [NOAA requirements and data](https://www.fisheries.noaa.gov/topic/offshore-wind-energy/assessing-impacts-to-marine-life) · [Saildrone](https://www.saildrone.com/news/new-acoustic-capabilities-protect-marine-mammals) |
-| Seismic/GPR; utilities, voids, tunnels and physical properties | Geophysicist / Subsurface Imaging Engineer | *Wave propagation and numerical optimization.* [SLB](https://apply.slb.com/careers/job/563499733040154-artificial-intelligence-engineer-houston-united-states) · [Exodigo](https://www.exodigo.com/about) · [Twente data](https://research.utwente.nl/en/datasets/ground-penetrating-radar-dataset-with-ground-truth-data-of-utilit/) · [OpenFWI](https://github.com/lanl/OpenFWI) |
-| MRI/CT/ultrasound; clinical reconstruction | Reconstruction Scientist | *Applied mathematics, physics and inverse problems.* [Philips](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/Reconstruction-Algorithms-Developer---MRI_579237-2) · [fastMRI](https://github.com/facebookresearch/fastMRI) · [DeepInverse](https://github.com/deepinv/deepinv) |
-| Optical sensing; wafer inspection and hidden structure | Metrology / Lithography Algorithm Engineer | *Physics-based optical or scattering simulation.* [ARCNL](https://arcnl.nl/jobs/phd-physics-informed-machine-learning-for-semiconductor-metrology-1333971) · [CXIDB](https://www.cxidb.org/) |
+| **Radar; counter-UAS under interference** — radio waves that detect, locate and track objects like aircraft and drones; counter-UAS is spotting small drones even when the signal is cluttered or jammed | Radar Signal Processing Engineer | *Detection/estimation, waveforms, phenomenology.* [Measured interference](https://doi.org/10.21227/E47T-P857) · [synchronized drone data](https://www.nature.com/articles/s41597-026-06802-6) · [review](https://doi.org/10.1016/j.cja.2026.104203) |
+| **Moving-platform SAR; Earth deformation, flood and ice** — radar on a satellite or aircraft images the ground through cloud and darkness and measures how the surface moves: deformation, floods, glaciers and ice | [SAR Engineer](https://www.iceye.com/careers/positions) · [sarmap](https://www.sarmap.ch/index.php/sar-remote-sensing-specialist/) | *Image formation, radar physics, phenomenology.* [NISAR](https://science.nasa.gov/mission/nisar/) · [Sentinel-1](https://dataspace.copernicus.eu/) · [MintPy](https://github.com/insarlab/MintPy) |
+| **SAR-GMTI / DMTI; wide-area moving targets** — airborne radar that picks out what is moving (vehicles, people on foot) across a wide area from the frequency shift their motion adds to the echo, separating them from the static background | Radar/SAR Moving-Target Engineer | *Moving-target indication and tracking.* [Sandia](https://www.sandia.gov/radar/modes-frequency-bands-of-operation/) · [Gotcha challenge](https://www.sdms.afrl.af.mil/content/challenge_areas/documents/A_challenge_problem_for_SAR-based_GMTI_in_urban_environments.pdf) |
+| **Underwater acoustics; marine-mammal and offshore monitoring** — listening to underwater sound (non-invasively) to detect which marine mammals are present and to monitor how offshore activity and its noise affect them | Sonar / Marine Acoustics Engineer | *Hydrography, geophysics and marine geospatial methods.* [NOAA requirements and data](https://www.fisheries.noaa.gov/topic/offshore-wind-energy/assessing-impacts-to-marine-life) · [Saildrone](https://www.saildrone.com/news/new-acoustic-capabilities-protect-marine-mammals) |
+| **Seismic / GPR; utilities, voids, tunnels and physical properties** — sending waves into the ground to map what is buried (pipes, cables, voids, tunnels) and its properties, without digging | Geophysicist / Subsurface Imaging Engineer | *Wave propagation and numerical optimization.* [SLB](https://apply.slb.com/careers/job/563499733040154-artificial-intelligence-engineer-houston-united-states) · [Exodigo](https://www.exodigo.com/about) · [Twente data](https://research.utwente.nl/en/datasets/ground-penetrating-radar-dataset-with-ground-truth-data-of-utilit/) · [OpenFWI](https://github.com/lanl/OpenFWI) |
+| **MRI / CT / ultrasound; clinical reconstruction** — turning the raw signals a scanner collects into the clinical image a doctor reads; doing it from fewer measurements makes scans faster and cheaper | Reconstruction Scientist | *Applied mathematics, physics and inverse problems.* [Philips](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/Reconstruction-Algorithms-Developer---MRI_579237-2) · [fastMRI](https://github.com/facebookresearch/fastMRI) · [DeepInverse](https://github.com/deepinv/deepinv) |
+| **Optical sensing; wafer inspection and hidden structure** — measuring structures only a few nanometres across on computer chips using light and scattering, to inspect wafers and catch hidden defects during manufacturing | Metrology / Lithography Algorithm Engineer | *Physics-based optical or scattering simulation.* [ARCNL](https://arcnl.nl/jobs/phd-physics-informed-machine-learning-for-semiconductor-metrology-1333971) · [CXIDB](https://www.cxidb.org/) |
 
 ## 4. Other lanes surveyed
 
@@ -63,8 +53,8 @@ modality and application. Each can support both scientific work and products.
 - Navigation, localization and SLAM — [OpenVINS](https://github.com/rpng/open_vins) · [GTSAM](https://github.com/borglab/gtsam). Sampled postings emphasised tooling and prior domain experience.
 - Physiological and neural inference — [neurotechjobs](https://neurotechjobs.io/) · [MNE-Python](https://mne.tools/stable/). The sampled research roles were predominantly PhD-gated.
 - Speech, audio and spatial sound — [beamforming tools](https://github.com/eac-ufsm/beamforming-tools).
-- Non-destructive evaluation — industrial ultrasound and guided-wave inspection; its algorithmic branch overlaps computational wave imaging.
-- Distributed fibre sensing — [Marlinks/Fluves](https://www.fluves.com/products/marlinks): *"real-time monitoring of subsea power cables using fiber optic sensing"*. [Prisma Photonics](https://www.prismaphotonics.com/careers/) · [OptaSense/Luna](https://www.optasense.com/) · [DASCore](https://github.com/dasdae/dascore) · [vessel detection from a submarine cable, IEEE J-STARS 2026](https://arxiv.org/abs/2509.11614), code released.
+- Non-destructive evaluation — industrial ultrasound and guided-wave inspection; the algorithms overlap computational wave imaging.
+- Distributed fibre sensing — [Marlinks/Fluves](https://www.fluves.com/products/marlinks): *"real-time monitoring of subsea power cables using fiber optic sensing"*. [Prisma Photonics](https://www.prismaphotonics.com/careers/) · [OptaSense/Luna](https://www.optasense.com/) · [DASCore](https://github.com/dasdae/dascore) · [vessel detection from a submarine cable, IEEE J-STARS 2026](https://arxiv.org/abs/2509.11614).
 
 **Simulation and design**
 - Computational fluid dynamics — ANSYS Fluent, OpenFOAM and [SU2](https://su2code.github.io/). Sampled entry postings focused on tool operation; solver development appeared as a separate tier.
@@ -75,21 +65,21 @@ modality and application. Each can support both scientific work and products.
 
 **Communications and information**
 - Wireless PHY and modem — [Sionna](https://github.com/NVlabs/sionna) · [OpenAirInterface](https://github.com/OPENAIRINTERFACE/openairinterface5g). LDPC and Polar codes, channel estimation and 3GPP systems.
+- Integrated sensing and communication (ISAC) — radios that also sense — and neural receivers are hired through PHY/modem, radar or 6G research roles rather than under a separate title. [3GPP ISAC](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4044) · [Ericsson](https://www.ericsson.com/en/reports-and-papers/ericsson-technology-review/articles/sensing-in-6g-use-cases-and-architecture) · [DeepSig](https://www.deepsig.ai/ai-native-open-ran-and-spectrum-awareness-integration-at-mwc26/)
 
-## 5. Momentum proof from requirements text
+## 5. How seniority accumulates
 
 | Lane | Early-career evidence | Senior evidence | What accumulates |
 |---|---|---|---|
 | Radar | [NTU Research Engineer I](https://ntu.wd3.myworkdayjobs.com/en-US/Careers/job/Research-Engineer-I--Radar-_R00023060): experimental sensing, waveform/array processing and evaluation | [Rivian Staff Radar DSP](https://careers.rivian.com/careers-home/jobs/32119): raw ADC to 4-D detections, MIMO architecture, super-resolution, interference, tracking and real-time implementation | Sensor phenomenology, failure diagnosis and architecture trade-offs |
 | Seismic / subsurface | [SLB entry-level GeoSolutions](https://careers.slb.com/jobdescription.aspx?id=EF18051-en_US+1): process 3-D/4-D seismic data, migration, velocity-model building and QC | [SLB FWI & AI Scientist](https://careers.slb.com/jobdescription.aspx?id=EF16555-en_US+1): design FWI foundation models, learned regularization, cycle-skipping mitigation and GPU/HPC methods | Wave physics, inversion failure diagnosis and production-scale scientific judgment |
 
-The delta is not merely years or a newer framework. The senior role owns which
-physical assumptions can be trusted and what to change when the system fails.
-
 ## 6. Current lean
 
 Leaning towards **physics-based remote sensing and inversion** — recovering
-physical state at a distance from measured waves. Not settled.
+physical state remotely using waves — and **cognitive radar**: deciding what to
+emit to detect better, in a closed transmit–receive loop.
+[Cognitive-radar review](https://link.springer.com/article/10.1007/s42452-026-08505-4)
 
 
 ## 7. Sources by lane
@@ -122,6 +112,6 @@ Learning: [Cambridge DAMTP inverse problems notes](https://www.damtp.cam.ac.uk/r
 **Tracking / counter-UAS** — Jobs: [Anduril sensor fusion](https://job-boards.greenhouse.io/andurilindustries/jobs/5194560007) · [9 Mothers, perception](https://jobs.ashbyhq.com/9-mothers/fd8c2655-efe2-490e-bff8-e8fed5dbf9aa) · [Allen Control Systems](https://jobs.ashbyhq.com/allen-control-systems/6eca9cbe-1a43-4082-91a5-84871e056637) · [Applied Intuition](https://jobs.ashbyhq.com/applied/47aa4ad5-62c0-4aba-b414-b60820029ced/) · [MathWorks fusion/tracking](https://www.mathworks.com/company/jobs/opportunities/28071-sensor-fusion-and-tracking-software-engineer).
 Data/code: [Anti-UAV challenge](https://anti-uav.github.io/dataset/) · [Stone Soup (DSTL)](https://github.com/dstl/Stone-Soup) · [AB3DMOT](https://github.com/xinshuoweng/AB3DMOT) · [nuScenes](https://www.nuscenes.org/) · [Argoverse](https://www.argoverse.org/) · [MTT course](https://mtt.edu.hendeby.se/about/).
 
-**Fibre sensing (DAS)** — [Prisma Photonics DSP researcher](https://www.prismaphotonics.com/careers/) · [DASCore](https://github.com/dasdae/dascore) · [DAS event dataset](https://www.nature.com/articles/s41597-025-05088-4) · [vessel detection on submarine cable](https://arxiv.org/pdf/2509.11614) · [silent whales via seabed fibre (PNAS)](https://www.pnas.org/doi/abs/10.1073/pnas.2603077123) · [Arctic cable: whales, storms, ships, quakes](https://www.nature.com/articles/s41598-022-23606-x) · [ML benchmarking for DAS](https://arxiv.org/pdf/2503.20681).
+**Fibre sensing (DAS)** — [Prisma Photonics DSP researcher](https://www.prismaphotonics.com/careers/) · [DASCore](https://github.com/dasdae/dascore) · [DAS event dataset](https://www.nature.com/articles/s41597-025-05088-4) · [vessel detection on submarine cable](https://arxiv.org/pdf/2509.11614) · [silent whales via seabed fibre (PNAS)](https://www.pnas.org/doi/abs/10.1073/pnas.2603077123) · [Arctic cable: whales, storms, ships, quakes](https://www.nature.com/articles/s41598-022-23606-x) · [ML benchmarking for DAS](https://arxiv.org/pdf/2503.20681). **Dataset caveat:** Marlinks-NS releases 10-second spatial-frequency energy features from one cable, not raw strain waveforms; its labels are AIS-derived.
 
 **Wireless PHY** — [Sionna (NVIDIA)](https://github.com/NVlabs/sionna) · [OpenAirInterface](https://github.com/OPENAIRINTERFACE/openairinterface5g) · [GNU Radio](https://www.gnuradio.org/) · [Apple 6G modem](https://jobs.anitab.org/companies/apple/jobs/73763574-wireless-systems-engineer-6g-cellular-modem) · [Intel DSP algorithms](https://intel.wd1.myworkdayjobs.com/External/job/Virtual-US/Senior-DSP-Algorithm-Engineer_JR0281792) · [MIT 6.450](https://ocw.mit.edu/courses/6-450-principles-of-digital-communications-i-fall-2006/resources/lecture-1-introduction/) · [deep unfolding for wireless review](https://arxiv.org/html/2502.05952).
