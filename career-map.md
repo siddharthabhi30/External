@@ -6,32 +6,22 @@
 
 - **Software engineer, 6 years.** SDE-2 at AWS since 2022, on Athena and Lex. Designed distributed systems serving over 250 million queries a day.
 - **Independent coursework, no teaching support.** MIT 6.824 Distributed Systems — full Raft implementation in Go. MIT 6.S081 Operating Systems.
-- **Topcoder competitive programming** — global rank 11.
+- **Topcoder — Competitive programming** — Gotglobal rank 11 in a competition.
 - **Physics-inspired DNN modification for radar** (personal project). Picks out targets too faint to see in a single frame by accumulating them across many frames. On synthetic radar data, detection rose from 83% to 92%. [Write-up](https://medium.com/@siddharthabhi30/when-physics-met-neural-network-67a35670c0c7).
-- **Research: high-dimensional particle flow filters, DNN-aided.** Submission planned for ICASSP 2027.
+- **Research: high-dimensional particle flow filters, DNN-aided** — [Shlezinger Lab](https://www.linkedin.com/company/shlezingerlab/about/). Submission planned for ICASSP 2027.
 
 ## 1. What this document is for
 
 **What I am asking for.** A potential project, a networking lead, or general
 career guidance. I am an Indian citizen, so US programmes gated on citizenship
-or security clearance are out of scope. Civil, European, Indian and commercial
-routes are open.
+or security clearance are out of scope.
 
 **How this survey was built.** Fields are grouped by **how industry hires** — job
-title and the requirements of live postings — rather than by shared mathematics
-or academic subject. Two fields count as one only when the same postings accept
-both backgrounds. The evidence and source inventory are in §7.
+title and the requirements of sampled job postings (some may have closed) —
+rather than by shared mathematics or academic subject. Two fields count as one only when the same postings accept
+both backgrounds. The evidence and source inventory are in §5.
 
-## 2. Selection criteria
-
-- **Momentum** — skill and judgment should compound over ten years, with room to invent new methods along the way.
-- **Algorithmic centre** — modelling, inference, optimization or signal processing as the primary activity.
-
-Salary, job volume, prestige and closeness to current skills are not weighed.
-The work should be software and algorithms, not circuit or hardware design.
-MSc or PhD both fine.
-
-## 3. Main wave-based lanes: hiring and applications
+## 2. Main wave-based lanes: hiring and applications
 
 Hiring separates these by modality and application. Each can support both
 scientific work and products.
@@ -46,7 +36,7 @@ scientific work and products.
 | **MRI / CT / ultrasound; clinical reconstruction** — turning the raw signals a scanner collects into the clinical image a doctor reads; doing it from fewer measurements makes scans faster and cheaper | Reconstruction Scientist | *Applied mathematics, physics and inverse problems.* [Philips](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/Reconstruction-Algorithms-Developer---MRI_579237-2) · [fastMRI](https://github.com/facebookresearch/fastMRI) · [DeepInverse](https://github.com/deepinv/deepinv) |
 | **Optical sensing; wafer inspection and hidden structure** — measuring structures only a few nanometres across on computer chips using light and scattering, to inspect wafers and catch hidden defects during manufacturing | Metrology / Lithography Algorithm Engineer | *Physics-based optical or scattering simulation.* [ARCNL](https://arcnl.nl/jobs/phd-physics-informed-machine-learning-for-semiconductor-metrology-1333971) · [CXIDB](https://www.cxidb.org/) |
 
-## 4. Other lanes surveyed
+## 3. Other lanes surveyed
 
 **Sensing-adjacent**
 - Tracking and sensor fusion — [Stone Soup](https://github.com/dstl/Stone-Soup) · [nuScenes](https://www.nuscenes.org/). The postings sampled were predominantly automotive.
@@ -67,22 +57,14 @@ scientific work and products.
 - Wireless PHY and modem — [Sionna](https://github.com/NVlabs/sionna) · [OpenAirInterface](https://github.com/OPENAIRINTERFACE/openairinterface5g). LDPC and Polar codes, channel estimation and 3GPP systems.
 - Integrated sensing and communication (ISAC) — radios that also sense — and neural receivers are hired through PHY/modem, radar or 6G research roles rather than under a separate title. [3GPP ISAC](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4044) · [Ericsson](https://www.ericsson.com/en/reports-and-papers/ericsson-technology-review/articles/sensing-in-6g-use-cases-and-architecture) · [DeepSig](https://www.deepsig.ai/ai-native-open-ran-and-spectrum-awareness-integration-at-mwc26/)
 
-## 5. How seniority accumulates
+## 4. Where I am exploring
 
-| Lane | Early-career evidence | Senior evidence | What accumulates |
-|---|---|---|---|
-| Radar | [NTU Research Engineer I](https://ntu.wd3.myworkdayjobs.com/en-US/Careers/job/Research-Engineer-I--Radar-_R00023060): experimental sensing, waveform/array processing and evaluation | [Rivian Staff Radar DSP](https://careers.rivian.com/careers-home/jobs/32119): raw ADC to 4-D detections, MIMO architecture, super-resolution, interference, tracking and real-time implementation | Sensor phenomenology, failure diagnosis and architecture trade-offs |
-| Seismic / subsurface | [SLB entry-level GeoSolutions](https://careers.slb.com/jobdescription.aspx?id=EF18051-en_US+1): process 3-D/4-D seismic data, migration, velocity-model building and QC | [SLB FWI & AI Scientist](https://careers.slb.com/jobdescription.aspx?id=EF16555-en_US+1): design FWI foundation models, learned regularization, cycle-skipping mitigation and GPU/HPC methods | Wave physics, inversion failure diagnosis and production-scale scientific judgment |
+I am exploring **physics-based remote sensing** and **communication**. Where they
+meet is **integrated sensing and communication (ISAC)**: one radio that both sends
+data and senses its surroundings — radar and communication in a single system.
+[ISAC survey](https://arxiv.org/abs/2108.07165) · [AI-radar review](https://doi.org/10.1016/j.cja.2026.104203)
 
-## 6. Current lean
-
-Leaning towards **physics-based remote sensing and inversion** — recovering
-physical state remotely using waves — and **cognitive radar**: deciding what to
-emit to detect better, in a closed transmit–receive loop.
-[Cognitive-radar review](https://link.springer.com/article/10.1007/s42452-026-08505-4)
-
-
-## 7. Sources by lane
+## 5. Sources by lane
 
 **Radar** — Jobs: [Sandia radar/ISR](https://www.sandia.gov/radar/jobs/) · [Helsing](https://jobs.accel.com/companies/helsing-2/jobs/39131980-ai-research-engineer-signal-processing) · [Array Labs](https://jobs.lever.co/arraylabs.io/56d997f8-4c3a-4a71-beb7-f488782652a0) · [MathWorks radar/phased array](https://www.mathworks.com/company/jobs/opportunities/34757-software-engineer-radar-and-phased-array-systems) · [Rivian radar DSP](https://careers.rivian.com/careers-home/jobs/32119) · [Poland raw-IQ radar](https://jobs.ashbyhq.com/rnrs.solutions/8e19b8b0-9b65-4d83-9a38-024d5a344ddf) · [Data Patterns India](https://www.datapatternsindia.com/careers/openings.php?id=781) · [Sensata Pune](https://sensata.wd1.myworkdayjobs.com/en-US/Sensata-Careers/job/Radar-Embedded-Firmware-Engineer_IRC97078) · [NTU Singapore](https://ntu.wd3.myworkdayjobs.com/en-US/Careers/job/Research-Engineer-I--Radar-_R00023060) · [AeroVect radar perception](https://jobs.ashbyhq.com/aerovect/a245c891-e718-4976-b85c-5a5020788102) · [Applied Physical Sciences](https://aphysci.com/careers/).
 Data: [measured 77-GHz FMCW interference](https://doi.org/10.21227/E47T-P857) · [2026 synchronized drone FMCW/CW/RF](https://doi.org/10.1038/s41597-026-06802-6) · [RADIal](https://github.com/valeoai/RADIal) · [RaDICaL](https://databank.illinois.edu/datasets/IDB-3289560) · [ColoRadar](https://doi.org/10.1177/02783649211068535) · [CARRADA](https://github.com/valeoai/carrada_dataset) · [RadarScenes](https://radar-scenes.com/) · [77 GHz drone/bird/human](https://zenodo.org/records/5845259/latest) · [AERPAW RF-UAV TDOA](https://doi.org/10.5061/dryad.vq83bk44h) · [BLE raw-IQ AoA](https://zenodo.org/records/15424721) · [ARIM-v2](https://github.com/ristea/arim-v2) · [awesome-radar-perception](https://github.com/Radar-Camera-Fusion/Awesome-Radar-Perception).
@@ -91,7 +73,7 @@ Current state of the field: [Radar signal processing based on AI — a comprehen
 
 **SAR** — Jobs: [ICEYE](https://www.iceye.com/careers/positions) · [Capella](https://www.capellaspace.com/careers) · [Synspective image-processing engineer](https://careers.synspective.com/o/sar-image-processing-engineer) · [Array Labs image formation/reconstruction](https://jobs.lever.co/arraylabs.io/56d997f8-4c3a-4a71-beb7-f488782652a0) · [Array Labs MTI/STAP](https://jobs.lever.co/arraylabs.io/05950462-f9f1-4736-86c3-aea60e97c45f) · [MathWorks SAR](https://www.mathworks.com/company/jobs/opportunities/36842-senior-radar-signal-processing-engineer-sar) · [DLR careers](https://www.dlr.de/en/careers/jobs) · [Sandia radar/ISR](https://www.sandia.gov/radar/jobs/) · [NORCE InSAR](https://www.egu.eu/jobs/7924/researchersenior-researcher-insar-development-and-applications/) · [Saab MSc thesis, SciML for inverse problems in SAR](https://www.saab.com/career/job-opportunities/masters-thesis-30-45-hp-scientific-machine-learning-for-physics-informed-inverse-problems-in-sar-imaging1).
 Data: [NISAR](https://science.nasa.gov/mission/nisar/) · [Copernicus/Sentinel-1](https://dataspace.copernicus.eu/) · [ASF DAAC](https://asf.alaska.edu/) · [ASF coherence/backscatter](https://asf.alaska.edu/datasets/daac/global-seasonal-sentinel-1-interferometric-coherence-and-backscatter-dataset/) · [Capella open data](https://support.capellaspace.com/how-do-i-access-capellas-open-data) · [Umbra open data](https://umbra.space/open-data/) · [100-image SLC stack](https://zenodo.org/records/12189041) · [BigEarthNet](https://bigearth.net/) · [Gotcha raw phase history](https://www.sdms.afrl.af.mil/index.php?collection=gotcha) · [Gotcha SAR-GMTI](https://www.sdms.afrl.af.mil/content/challenge_areas/documents/A_challenge_problem_for_SAR-based_GMTI_in_urban_environments.pdf) · [UNICORN airborne SAR/EO](https://github.com/AFRL-RY/data-unicorn-2008) · [Sandia complex SAR](https://www.sandia.gov/radar/pathfinder-radar-isr-and-synthetic-aperture-radar-sar-systems/complex-data-clone/) · [AFRL ADTS](https://www.sdms.afrl.af.mil/index.php?collection=adts) · [BELSAR](https://www.nature.com/articles/s41597-024-03320-1).
-India: [GalaxEye](https://galaxeye.space/) launched [Drishti](https://www.eoportal.org/satellite-missions/galaxeye), carrying SAR and a multispectral imager on one platform, May 2026. Its [AI posting](https://careers.galaxeye.space/jobs/Careers) asks for *"PyTorch, Vision Transformers, Diffusion Models, GANs, VAEs, CLIP, BLIP, LLaVA"* and lists no radar physics.
+India: [GalaxEye](https://galaxeye.space/) launched [Drishti](https://www.eoportal.org/satellite-missions/galaxeye), carrying SAR and a multispectral imager on one platform, May 2026. Its [AI posting](https://careers.galaxeye.space/jobs/Careers) focuses on ML tooling (*"PyTorch, Vision Transformers, Diffusion Models, GANs, VAEs, CLIP, BLIP, LLaVA"*).
 Code: [ISCE2](https://github.com/isce-framework/isce2) · [ISCE3](https://github.com/isce-framework/isce3) · [MintPy](https://github.com/insarlab/MintPy) · [pyroSAR](https://github.com/johntruckenbrodt/pyroSAR) · [awesome-sar](https://github.com/RadarCODE/awesome-sar) · [NGA SarPy](https://github.com/ngageoint/sarpy) · [RITSAR](https://github.com/dm6718/ritsar) · [AISTAP-SIM](https://github.com/mit-ll/AISTAP-SIM).
 Research directions currently funded: distributed radar interferometry and tomography with smallsat clusters, blind source separation for spaceborne SAR, InSAR denoising, stochastic signal processing for SAR ([DLR](https://www.dlr.de/en/hr/)); InSAR for infrastructure ([PoliMi](https://www.polimi.it/en/phd/prospective-phd-candidates/admission/calls-and-open-positions/ciclo-42/2nd-call)); multi-temporal InSAR — time series analysis, phase unwrapping, atmospheric and ionospheric correction ([NORCE](https://www.egu.eu/jobs/7924/researchersenior-researcher-insar-development-and-applications/)) · [SAR tomography review](https://www.tandfonline.com/doi/10.1080/10095020.2025.2510365) · [NASA SAR introduction and training](https://www.earthdata.nasa.gov/learn/trainings/introduction-synthetic-aperture-radar-sar-its-applications) · [SAR-CBC learning resources, UAF](https://learnsar.open.uaf.edu/sar-resources/) · [NASA free SAR semester](https://science.nasa.gov/mission/nisar/sar-education-resources/).
 
