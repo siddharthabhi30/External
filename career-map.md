@@ -1,6 +1,6 @@
 # Where does physics-based inference get hired?
 
-**Siddharth Abhi** · [siddharthabhi30@gmail.com](mailto:siddharthabhi30@gmail.com) · [resume](https://drive.google.com/file/d/1CxLFIKJ7P4eBhqNGCeyWnYVStYtQ3BY6/view?usp=sharing) · [full background](https://sweltering-clematis-24f.notion.site/2ff1e8d5adfd80699d01d220f8d1f8e1?v=3bc1e8d5adfd8057950a000ca8e833b8)
+**Siddharth** · [siddharthabhi30@gmail.com](mailto:siddharthabhi30@gmail.com) · [resume](https://drive.google.com/file/d/1CxLFIKJ7P4eBhqNGCeyWnYVStYtQ3BY6/view?usp=sharing) · [full background](https://sweltering-clematis-24f.notion.site/2ff1e8d5adfd80699d01d220f8d1f8e1?v=3bc1e8d5adfd8057950a000ca8e833b8)
 
 ## 0. Background
 
