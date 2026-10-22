@@ -1,3 +1,7 @@
+# Paper summaries
+
+Current notes; a section does not mean the whole paper has been mastered. [Context](../CONTEXT.md) · [Future reading](future/README.md) · [Ideation](../ideation/dynamic-spatial-graph.md)
+
 ## Graph Laplacian Distributed Particle Filtering (2016)
 
 [Paper — Rabbat, Coates and Blouin, EUSIPCO (2016)](https://www.eurasip.org/Proceedings/Eusipco/Eusipco2016/papers/1570255849.pdf)
@@ -26,7 +30,7 @@ My current understanding: This paper builds a graph at the particle level instea
 
 My current understanding: They use an RNN for temporal relationships and graph convolution (a GNN component) for spatial relationships, combining them to make predictions.
 
-My understanding of training: They train end to end. From time \(1\) to \(P\), they forecast and assimilate using particle flow at each step. They then forecast another \(Q\) steps, from \(P+1\) to \(P+Q\). The loss is calculated on those future predictions, and the model parameters are updated using SGD.
+My understanding of training: They train end to end. From time $1$ to $P$, they forecast and assimilate using particle flow at each step. They then forecast another $Q$ steps, from $P+1$ to $P+Q$. The loss is calculated on those future predictions, and the model parameters are updated using SGD.
 
 ## Dynamic Neural Relational Inference (2020)
 
@@ -34,20 +38,94 @@ My understanding of training: They train end to end. From time \(1\) to \(P\), t
 
 My current understanding: They convert the state space into a latent representation. The sequence of latent representations over time is used to predict spatial relations. Those spatial relations are then used to improve prediction.
 
-## Ideation: AD-EnFF with dynamic spatial relationships
+## Distributed Kalman Filtering for Interconnected Dynamic Systems (2022)
 
-My idea is to use a weather or atmospheric model and use Liang–Kleeman (LK) information flow to create a dynamic spatial graph. Each graph node represents a geographical region or local atmospheric state block. For example, sea-surface temperature in one region could affect soil moisture in another. More accurate observations of that temperature could help learn better hyperparameters and prior bias correction for the local AD-EnFF in the other region.
+[Paper — Yuchen Zhang, Bo Chen, Li Yu and Daniel W. C. Ho, IEEE Transactions on Cybernetics (2022)](https://octochen.github.io/papers/P4_2022-01_Distributed%20Kalman%20filtering%20for%20interconnected%20dynamic%20systems.pdf)
 
-The dynamic graph would provide additional input when learning the hyperparameters. We would develop a gossip protocol to share information and use the graph embeddings to learn the hyperparameters for each local AD-EnFF node. We would still learn both the prior bias correction and the hyperparameters, as in AD-EnFF, and run particle flow normally. The added information is the dynamic spatial correlation.
+**State and interconnections:** Each node is a subsystem. $x_{i,t}$ is its state at time $t$. $A_i$ describes its own evolution, and $A_{i,j}$ describes how node $j$ affects node $i$. $A_{i,j}$ is known, so the stochastic evolution equation is known for each node.
 
-Possible contributions:
+**Process model:**
 
-1. Dynamic spatial correlations represented in an interpretable graph.
-2. Using those relationships to improve AD-EnFF filtering.
-3. A gossip protocol tailored specifically to this architecture.
+```math
+x_{i,t}=A_i x_{i,t-1}+B_i u_{i,t-1}+\sum_j A_{i,j}x_{j,t-1}+\Gamma_i w_{i,t-1}.
+```
 
-IcyAlert could use the same idea: leverage an interpretable dynamic graph to improve forecasting.
+**Predict:** Use the previous posteriors of node $i$ and its neighbours.
 
-## TODO
+```math
+\hat{x}_{i,t}^{\text{pred}}
+=A_i\hat{x}_{i,t-1}^{\text{post}}
++B_i u_{i,t-1}
++\sum_j A_{i,j}\hat{x}_{j,t-1}^{\text{post}}.
+```
 
-- [ ] [Unsupervised Learning of Sampling Distributions for Particle Filters (2023)](https://arxiv.org/html/2302.01174)
+**Filter:** Add the current local correction and previous neighbour corrections.
+
+```math
+\begin{aligned}
+\hat{x}_{i,t}^{\text{post}}
+&=\hat{x}_{i,t}^{\text{pred}}
++K_i\bigl(y_{i,t}-C_i\hat{x}_{i,t}^{\text{pred}}\bigr)\\
+&\quad+\sum_j K_{i,j}\bigl(y_{j,t-1}-C_j\hat{x}_{j,t-1}^{\text{post}}\bigr).
+\end{aligned}
+```
+
+Here, $j$ runs over incoming neighbours, $y$ is the measurement, and $C$ maps a state to measurement space. The gains are calculated for the current step.
+
+**TODO:** Read Section III-A to understand how they calculate the local Kalman gain and the neighbour decoupling gains.
+
+## Structure-aware decoupled imputation network for multivariate time series (2024)
+
+[Paper — Ahmed and Schmidt-Thieme](https://link.springer.com/article/10.1007/s10618-023-00987-9)
+
+**Premise:** A set of nodes, each with its own measurements.
+
+**Goal:** Learn relationships between the nodes to understand the graph structure, then use those relationships to predict missing values.
+
+**My current understanding:** They artificially create holes by masking real node values, then reconstruct those values. In doing so, they learn the graph structure using a GNN in an unsupervised way. The relationships indicate which node’s information helps reconstruct another node’s readings.
+
+**Training:** They train by artificially masking node values, reconstructing them, and backpropagating the reconstruction error.
+
+## Neural Relational Inference for Interacting Systems (2018)
+
+[Paper — Kipf et al.](https://proceedings.mlr.press/v80/kipf18a/kipf18a.pdf)
+
+**My current understanding:** This paper learns the graph structure as well as the dynamics in an unsupervised manner.
+
+## State space partitioning based on constrained spectral clustering for block particle filtering (2022)
+
+[Paper](https://arxiv.org/pdf/2203.03475)
+
+**Premise:** A block particle filter divides the state space into blocks to overcome the curse of dimensionality.
+
+**Goal:** Improve the block particle filter through better clustering of the state variables.
+
+**My current understanding:** Using the current particles, they create a correlation matrix/graph. They then use spectral clustering (SC) to group the state variables into blocks. During filtering, the blocks are chosen so that strongly correlated state variables are grouped together. They also test the method on the nonlinear Lorenz-96 model.
+
+**Contribution:** Intelligent clustering of the state variables to enhance the block particle filter.
+
+**Ideation (my proposal):** Maybe we can improve this using DNN distillation and attention to correct spurious correlations arising from the ensemble. Better covariance estimates could give a better graph Laplacian and better clustering, enhancing the block particle filter. We could use larger ensembles as well as time-series data for covariance distillation.
+
+For a PFF version, use particle flow instead of reweighting, with a single scalar guidance hyperparameter per particle. The idea is to keep one scalar per particle, analogous to the single-weight-per-particle structure in PF.
+
+**Related paper for this idea:** [Enabling High-Accuracy Data Assimilation with Limited Ensembles via Machine Learning-Based Covariance Correction (2026)](https://arxiv.org/pdf/2605.11639). We could use this approach for covariance correction.
+
+[More of my notes on improving covariance](https://github.com/siddharthabhi30/IcyAlert_filter_core/blob/main/notes-and-papers/fixing-cov-for-small-ensm.md)
+
+## Neural Enhanced Belief Propagation for Cooperative Localization (2021)
+
+[Paper — Liang and Meyer](https://arxiv.org/pdf/2105.12903)
+
+**Premise:** Cooperative localization of mobile agents, such as a swarm of robots estimating their positions.
+
+**My current understanding:** Belief propagation (BP) is purely model-based and can become overconfident. This paper uses learned information from a GNN to complement BP and improve localization.
+
+**TODO:** [Code](https://github.com/Peterbotliang/NEBP-Cooperative-Localization) — Read the low-level implementation to understand what they are doing.
+
+## Gaussian Ensemble Belief Propagation for Efficient Inference in High-Dimensional, Black-box Systems (2025)
+
+[Paper — MacKinlay et al., ICLR 2025](https://proceedings.iclr.cc/paper_files/paper/2025/file/2cd38e57eb9c3c96e859b89c3d0a3b18-Paper-Conference.pdf)
+
+**My current understanding:** This is a framework for belief propagation. Gaussian belief propagation already existed; this paper develops an ensemble-based version, Gaussian Ensemble Belief Propagation (GEnBP). The paper claims the methodology can be used for data assimilation, system identification, and more.
+
+**TODO:** Understand their methodology: what they are doing, how it works, and whether we can use it.
